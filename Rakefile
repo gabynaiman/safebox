@@ -15,11 +15,3 @@ Rake::TestTask.new(:spec) do |t|
 end
 
 task default: :spec
-
-desc 'Pry console'
-task :console do
-  require 'safebox'
-  require 'pry'
-  ARGV.clear
-  Pry.start
-end

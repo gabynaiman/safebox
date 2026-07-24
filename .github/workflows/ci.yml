@@ -15,12 +15,6 @@ jobs:
       matrix:
         ruby-version: ['2.3', '2.4', '2.5', '2.6', '2.7', '3.0', '3.1', '3.2', '3.3', '3.4']
         include:
-          # Ruby 2.3 y 2.4 pueden no compilar en ubuntu-latest por OpenSSL 3;
-          # se marcan como best-effort para no romper el CI.
-          - ruby-version: '2.3'
-            allow-failure: true
-          - ruby-version: '2.4'
-            allow-failure: true
           - ruby-version: '4.0'
             allow-failure: true
           - ruby-version: ruby-head

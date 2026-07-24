@@ -45,7 +45,7 @@ class Safebox
     raw       = decode_base64! ciphertext, :ciphertext
     iv        = raw[0, IV_SIZE]
     auth_tag  = raw[IV_SIZE, TAG_SIZE]
-    encrypted = raw[IV_SIZE + TAG_SIZE..]
+    encrypted = raw[(IV_SIZE + TAG_SIZE)..-1]
 
     cipher = OpenSSL::Cipher.new(ALGORITHM).tap(&:decrypt)
     cipher.key       = key

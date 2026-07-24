@@ -1,0 +1,6 @@
+require 'coverage_helper'
+require 'safebox'
+require 'minitest/autorun'
+require 'minitest/colorin'
+require 'minitest/great_expectations'
+require 'pry-nav' if RUBY_VERSION < '3.0'

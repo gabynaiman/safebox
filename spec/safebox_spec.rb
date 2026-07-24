@@ -72,15 +72,13 @@ describe Safebox do
     other_safebox = Safebox.new(Safebox.generate_key)
     ciphertext    = safebox.encrypt('secret')
 
-    proc { other_safebox.decrypt(ciphertext) }
-      .must_raise Safebox::DecryptionError
+    proc { other_safebox.decrypt(ciphertext) }.must_raise Safebox::DecryptionError
   end
 
   it 'raises DecryptionError when decrypting with a different auth_data' do
     ciphertext = safebox.encrypt('secret', auth_data: 'context')
 
-    proc { safebox.decrypt(ciphertext, auth_data: 'other') }
-      .must_raise Safebox::DecryptionError
+    proc { safebox.decrypt(ciphertext, auth_data: 'other') }.must_raise Safebox::DecryptionError
   end
 
   it 'raises DecryptionError when the ciphertext is tampered' do
@@ -88,8 +86,7 @@ describe Safebox do
     raw[-1]  = (raw[-1].ord ^ 0xFF).chr
     tampered = Base64.strict_encode64(raw)
 
-    proc { safebox.decrypt(tampered) }
-      .must_raise Safebox::DecryptionError
+    proc { safebox.decrypt(tampered) }.must_raise Safebox::DecryptionError
   end
 
 end

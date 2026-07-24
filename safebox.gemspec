@@ -20,7 +20,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  # base64 deja de ser default gem en Ruby 3.4+.
   spec.add_dependency 'base64' if RUBY_VERSION >= '3.4'
 
   spec.add_development_dependency 'rake', '~> 12.0'
@@ -29,4 +28,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-colorin', '~> 0.1'
   spec.add_development_dependency 'minitest-line', '~> 0.6'
   spec.add_development_dependency 'simplecov', '~> 0.12'
+
+  if RUBY_VERSION >= '3.4'
+    spec.add_development_dependency 'mutex_m'
+    spec.add_development_dependency 'ostruct'
+  end
 end

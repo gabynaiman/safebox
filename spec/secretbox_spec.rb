@@ -69,8 +69,8 @@ describe Secretbox do
   end
 
   it 'raises DecryptionError when decrypting with a different key' do
-    other_safebox = Secretbox.new(Secretbox.generate_key)
-    ciphertext    = secretbox.encrypt('secret')
+    other_secretbox = Secretbox.new(Secretbox.generate_key)
+    ciphertext      = secretbox.encrypt('secret')
 
     proc { other_secretbox.decrypt(ciphertext) }.must_raise Secretbox::DecryptionError
   end

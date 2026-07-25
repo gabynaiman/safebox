@@ -1,5 +1,5 @@
 require 'coverage_helper'
-require 'safebox'
+require 'secretbox'
 require 'minitest/autorun'
 require 'minitest/colorin'
 require 'minitest/great_expectations'

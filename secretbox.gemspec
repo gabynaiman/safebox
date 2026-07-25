@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'safebox/version'
+require 'secretbox/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'safebox'
-  spec.version       = Safebox::VERSION
+  spec.name          = 'secretbox'
+  spec.version       = Secretbox::VERSION
   spec.authors       = ['Gabriel Naiman']
   spec.email         = ['gabynaiman@gmail.com']
   spec.summary       = 'AES-256-GCM authenticated encryption for sensitive data'
   spec.description   = 'AES-256-GCM authenticated encryption for sensitive data'
-  spec.homepage      = 'https://github.com/gabynaiman/safebox'
+  spec.homepage      = 'https://github.com/gabynaiman/secretbox'
   spec.license       = 'MIT'
 
   spec.required_ruby_version = '>= 2.3.8'

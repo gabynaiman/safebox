@@ -2,9 +2,9 @@ require 'base64'
 require 'openssl'
 require 'securerandom'
 
-require_relative 'safebox/version'
+require_relative 'secretbox/version'
 
-class Safebox
+class Secretbox
 
   ALGORITHM = 'aes-256-gcm'.freeze
   KEY_SIZE  = 32

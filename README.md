@@ -29,12 +29,12 @@ Or install it yourself as:
 key = Secretbox.generate_key # => base64 String (32 random bytes)
 ```
 
-Store the key in an environment variable (e.g. `SAFEBOX_KEY`).
+Store the key in an environment variable (e.g. `SECRETBOX_KEY`).
 
 ### Encrypt and decrypt
 
 ```ruby
-secretbox = Secretbox.new(ENV.fetch('SAFEBOX_KEY'))
+secretbox = Secretbox.new(ENV.fetch('SECRETBOX_KEY'))
 
 ciphertext = secretbox.encrypt('secret message')
 secretbox.decrypt(ciphertext) # => 'secret message'

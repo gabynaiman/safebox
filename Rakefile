@@ -16,10 +16,10 @@ end
 
 task default: :spec
 
-desc 'Pry console'
+desc 'IRB console'
 task :console do
+  require 'irb'
   require 'secretbox'
-  require 'pry'
   ARGV.clear
-  Pry.start
+  IRB.start
 end

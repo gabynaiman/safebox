@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in safebox.gemspec
+# Specify your gem's dependencies in secretbox.gemspec
 gemspec
